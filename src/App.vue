@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img class="backpacker-logo" src="./assets/backpacker.svg">
     <router-view/>
   </div>
 </template>
@@ -20,5 +20,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.backpacker-logo{
+  height: 200px;
 }
 </style>

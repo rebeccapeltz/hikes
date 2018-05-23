@@ -1,12 +1,7 @@
 /* eslint-disable */
 <template>
   <div class="hike-list container">
-       <div class="actions">
-      <router-link class="btn btn-default" v-bind:to="{path: '/add-hike'}">
-        <span class="glyphicon glyphicon-plus"></span>
-        Add hike
-      </router-link>
-    </div>
+      
     <div class="filters row">
       <div class="form-group col-sm-3">
         <label for="search-element">Hike Name</label>
@@ -46,11 +41,17 @@
           {{ hike.length }}
         </td>
         <td>
-          <router-link class="btn btn-warning btn-xs" v-bind:to="{name: 'hike-edit', params: {hike_id: hike.id}}">Edit</router-link>
+          <router-link class="btn btn-success btn-xs" v-bind:to="{name: 'hike-edit', params: {hike_id: hike.id}}">Edit</router-link>
           <router-link class="btn btn-danger btn-xs" v-bind:to="{name: 'hike-delete', params: {hike_id: hike.id}}">Delete</router-link>
         </td>
       </tr>
       </tbody>
+       <div class="actions">
+      <router-link class="btn btn-default" v-bind:to="{path: '/add-hike'}">
+        <span class="glyphicon glyphicon-plus"></span>
+        Add hike
+      </router-link>
+    </div>
     </table>
   </div>
 </template>
