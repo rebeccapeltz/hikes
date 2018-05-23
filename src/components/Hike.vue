@@ -41,7 +41,7 @@ export default {
     loadGoogleMapsApi()
       .then(function(googleMaps) {
         new googleMaps.Map(document.querySelector("#map"), {
-          key: 'AIzaSyCnBaP_WQB9R6-4ilksoMB1VuTEAgJRtco',
+          key: 'AIzaSyCammOmNZWnfTINNPIeRqFvJD6Ij8aHZ6M',
           center: {
             lat: self.hike.latitude,
             lng: self.hike.longitude
