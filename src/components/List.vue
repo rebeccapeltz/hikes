@@ -57,11 +57,11 @@
 </template>
 
 <script>
-import { hikes, findHike, findHikeKey } from "../data";
+import { mapList } from "../data";
 export default {
   name: "List",
   data() {
-    return { hikes: hikes, searchKey: "" };
+    return { hikes: mapList.asList(), searchKey: "" };
   },
   computed: {
     filteredHikes: function() {

@@ -1,19 +1,33 @@
 /* eslint-disable */
 <template>
-  <div class="add-product container">
-       <h2>Add new product</h2>
-    <form v-on:submit="createProduct">
+  <div class="add-hike container">
+       <h2>Add new hike</h2>
+    <form v-on:submit="createHike">
       <div class="form-group">
-        <label for="add-name">Name</label>
-        <input class="form-control" id="add-name" v-model="product.name" required/>
+        <label for="edit-name">Name</label>
+        <input class="form-control" id="edit-name" v-model="hike.name" required/>
       </div>
       <div class="form-group">
-        <label for="add-description">Description</label>
-        <textarea class="form-control" id="add-description" rows="10" v-model="product.description"></textarea>
+        <label for="edit-link">Link</label>
+        <input class="form-control" id="edit-link" v-model="hike.link" required/>
       </div>
       <div class="form-group">
-        <label for="add-price">Price, <span class="glyphicon glyphicon-usd"></span></label>
-        <input type="number" class="form-control" id="add-price" v-model="product.price"/>
+        <label for="edit-elevation">Elevation</label>
+        <input class="form-control" id="edit-elevation" v-model="hike.elevation" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="edit-latitude">Latitude</label>
+        <input class="form-control" id="edit-latitude" v-model="hike.latitude" required/>
+      </div>
+      <div class="form-group">
+        <label for="edit-name">Longitude</label>
+        <input class="form-control" id="edit-longitude" v-model="hike.longitude" required/>
+      </div>
+      
+      <div class="form-group">
+        <label for="edit-length">Length</label>
+         <input class="form-control" id="edit-length" v-model="hike.length"/>       
       </div>
       <button type="submit" class="btn btn-primary">Create</button>
       <router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
@@ -22,21 +36,25 @@
 </template>
 
 <script>
-import { products, findProduct, findProductKey } from '../data';
+import { mapList } from '../data';
 export default {
-  name: 'AddProduct',
+  name: 'AddHike',
   data () {
-    return {product: {name: '', description: '', price: ''},
-    products: products}
+    return {
+      hike: {name: '',link:'', elevation: '', latitude: '',longitude:'', length:''},
+    hikes: mapList}
   },
   methods: {
-    createProduct: function () {
-      var product = this.product
-      products.push({
+    createHike: function () {
+      var hike = this.hike
+      this.hikes.add({
         id: Math.random().toString().split('.')[1],
-        name: product.name,
-        description: product.description,
-        price: product.price
+        name: hike.name,
+        link: hike.link,
+        elevation: hike.elevation,
+        latitude: hike.latitude,
+        longitude: hike.longitude,
+        length: hike.length
       })
       this.$router.push('/')
     }

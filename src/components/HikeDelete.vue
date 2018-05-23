@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import { hikes, findHike, findHikeKey } from '../data';
+import { mapList } from '../data';
 export default {
   name: "hikeDelete",
   data() {
-    return { hike: findHike(this.$route.params.hike_id),hikes: hikes };
+    return { hike: mapList.getItemByKey(this.$route.params.hike_id),hikes: mapList };
   },
   methods: {
     deleteHike: function() {
-      hikes.splice(findHikeKey(this.$route.params.hike_id), 1);
+      this.hikes.remove(this.hikes.getItemByKey(this.$route.params.hike_id))
       this.$router.push("/");
     }
   }

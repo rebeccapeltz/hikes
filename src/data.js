@@ -19,7 +19,7 @@ var hikes = [
     length: "7.5 miles RT"
     },
     {
-      id:2,
+      id:3,
       name: "Mt. Si",
       link: "https://www.wta.org/go-hiking/hikes/mount-si",
       elevation: "3150 ft",
@@ -32,21 +32,4 @@ let mapList = new MapList("id");
 hikes.forEach(hike =>{
     mapList.add(hike);
 });
-
-
-function findProductKey (productId) {
-  for (var key = 0; key < products.length; key++) {
-    if (products[key].id === productId) {
-      return key;
-    }
-  }
-};
-function findHikeKey (hikeId) {
-  for (var key = 0; key < hikes.length; key++) {
-    if (hikes[key].id === hikeId) {
-      return key;
-    }
-  }
-};
-
-export {products, findProduct, findProductKey, hikes,findHike,findHikeKey}
+export {mapList}

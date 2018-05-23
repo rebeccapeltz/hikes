@@ -36,16 +36,17 @@
 </template>
 
 <script>
-import { hikes, findHike, findHikeKey } from "../data";
+import { mapList } from "../data";
 export default {
   name: "hikeEdit",
   data() {
-    return { hike: findHike(this.$route.params.hike_id), hikes: hikes };
+    return { hike: mapList.getItemByKey(this.$route.params.hike_id), hikes: mapList };
   },
   methods: {
     updateHike: function() {
       var hike = this.hike;
-      hikes[findHikeKey(hike.id)] = {
+
+      this.hike = {
         id: hike.id,
         name: hike.name,
         link: hike.link,
