@@ -61,11 +61,11 @@ import { mapList } from "../data";
 export default {
   name: "List",
   data() {
-    return { hikes: mapList.asList(), searchKey: "" };
+    return { hikes: mapList, searchKey: "" };
   },
   computed: {
     filteredHikes: function() {
-      return this.hikes.filter(function(hike) {
+      return this.hikes.asList().filter(function(hike) {
         return (
           this.searchKey.toLowerCase() == "" ||
           hike.name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1
