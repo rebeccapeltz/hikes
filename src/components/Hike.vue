@@ -38,10 +38,9 @@ export default {
   },
   mounted() {
     let self = this;
-    loadGoogleMapsApi()
+    loadGoogleMapsApi({key: 'AIzaSyCammOmNZWnfTINNPIeRqFvJD6Ij8aHZ6M'})
       .then(function(googleMaps) {
         new googleMaps.Map(document.querySelector("#map"), {
-          key: 'AIzaSyCammOmNZWnfTINNPIeRqFvJD6Ij8aHZ6M',
           center: {
             lat: self.hike.latitude,
             lng: self.hike.longitude
