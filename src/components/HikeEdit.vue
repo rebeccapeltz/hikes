@@ -44,17 +44,7 @@ export default {
   },
   methods: {
     updateHike: function() {
-      var hike = this.hike;
-
-      this.hike = {
-        id: hike.id,
-        name: hike.name,
-        link: hike.link,
-        elevation: hike.elevation,
-        latitude: hike.latitude,
-        longitude: hike.longitude,
-        length: hike.length
-      };
+      this.hikes.update(this.hike);
       this.$router.push("/");
     }
   }

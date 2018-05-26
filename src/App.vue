@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div id="app">
-    <img class="backpacker-logo" src="./assets/backpacker.svg">
+    <router-link v-bind:to="'/'"><img class="backpacker-logo" src="./assets/backpacker.svg"></router-link>
     <router-view/>
   </div>
 </template>

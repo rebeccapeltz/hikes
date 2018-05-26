@@ -33,23 +33,21 @@ export default {
   name: "hike",
   data() {
     return {
-      hike: mapList.getItemByKey(this.$route.params.hike_id),
-      hikes: mapList
+      hike: mapList.getItemByKey(this.$route.params.hike_id)
     };
   },
   mounted() {
-    let self = this;
     loadGoogleMapsApi({key: KEY})
-      .then(function(googleMaps) {
+      .then((googleMaps)=> {
         new googleMaps.Map(document.querySelector("#map"), {
           center: {
-            lat: self.hike.latitude,
-            lng: self.hike.longitude
+            lat: this.hike.latitude,
+            lng: this.hike.longitude
           },
           zoom: 12
         });
       })
-      .catch(function(error) {
+      .catch((error) =>{
         console.error(error);
       });
   }

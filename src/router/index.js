@@ -11,7 +11,7 @@ import List from '@/components/List'
 Vue.use(Router)
 
 export default new Router({routes:[
-  { path: '/', component: List},
+  { path: '/', component: List, name: 'list'},
   { path: '/hike/:hike_id', component: Hike, name: 'hike'},
   { path: '/add-hike', component: AddHike},
   { path: '/hike/:hike_id/edit', component: HikeEdit, name: 'hike-edit'},
