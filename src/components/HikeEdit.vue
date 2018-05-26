@@ -29,8 +29,8 @@
         <label for="edit-length">Length</label>
          <input class="form-control" id="edit-length" v-model="hike.length"/>       
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
-      <router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+      <button type="submit" class="btn btn-primary act">Save</button>
+      <router-link class="btn btn-default act" v-bind:to="'/'">Cancel</router-link>
     </form>
   </div>
 </template>
@@ -66,7 +66,9 @@ export default {
 .form-group {
   max-width: 500px;
 }
-
+.act  {
+  margin-top: 20px;
+}
 .actions {
   padding: 10px 0;
 }

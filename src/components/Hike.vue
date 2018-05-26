@@ -27,6 +27,7 @@
 
 <script>
 import { mapList } from "../data";
+import {KEY} from "../config";
 const loadGoogleMapsApi = require('load-google-maps-api')
 export default {
   name: "hike",
@@ -38,7 +39,7 @@ export default {
   },
   mounted() {
     let self = this;
-    loadGoogleMapsApi({key: 'AIzaSyCammOmNZWnfTINNPIeRqFvJD6Ij8aHZ6M'})
+    loadGoogleMapsApi({key: KEY})
       .then(function(googleMaps) {
         new googleMaps.Map(document.querySelector("#map"), {
           center: {

@@ -28,7 +28,7 @@ var hikes = [
       length: "8 miles RT"
       }
 ]
-let mapList = new MapList("id");
+const mapList = new MapList("id");
 hikes.forEach(hike =>{
     mapList.add(hike);
 });
