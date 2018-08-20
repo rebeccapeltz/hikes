@@ -68,10 +68,11 @@ export default {
   },
   computed: {
     filteredHikes: function() {
-      return this.hikes.asList().filter(function(hike) {
+      let search = this.searchKey.toLowerCase();
+      return this.hikes.asList().filter((hike)=> {
         return (
-          this.searchKey.toLowerCase() == "" ||
-          hike.name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1
+          search.length === 0 ||
+          hike.name.toLowerCase().indexOf(search) !== -1
         );
       }, this);
     }

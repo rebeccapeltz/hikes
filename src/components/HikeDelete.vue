@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     deleteHike: function() {
-      this.hikes.remove(this.hikes.getItemByKey(this.$route.params.hike_id))
+      this.hikes.remove(this.hike.id)
       this.$router.push("/");
     }
   }
