@@ -61,7 +61,10 @@ import { mapList } from "../data";
 export default {
   name: "List",
   data() {
-    return { hikes: mapList, searchKey: "" };
+    return { 
+      hikes: mapList, 
+      searchKey: "" 
+      };
   },
   computed: {
     filteredHikes: function() {
