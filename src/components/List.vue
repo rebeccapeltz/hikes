@@ -10,13 +10,13 @@
     </div>
     <table class="table">
       <thead>
-      <tr>
-        <th>Name</th>
-        <th>Elevation</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Length</th>
-        <th class="col-sm-2">Actions</th>
+      <tr class="m-0">
+        <th class="w-20">Name</th>
+        <th class="w-10">Elevation</th>
+        <th class="w-10">Latitude</th>
+        <th class="w-10">Longitude</th>
+        <th class="w-20">Length</th>
+        <th class="w-30">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -47,9 +47,8 @@
       </tr>
       </tbody>
        <div class="actions">
-      <router-link class="btn btn-default" v-bind:to="{path: '/add-hike'}">
-        <span class="glyphicon glyphicon-plus"></span>
-        Add hike
+      <router-link tag="button" class="btn btn-default" v-bind:to="{path: '/add-hike'}">
+        <button><i class="fas fa-plus"><span class="btn-text">Add hike</span></i></button>
       </router-link>
     </div>
     </table>
@@ -97,4 +96,8 @@ tr td:first-child {
   text-align: left;
   padding-left: 30px;
 }
+.btn-text {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 </style>
