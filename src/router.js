@@ -1,12 +1,11 @@
 /* eslint-disable */
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Hike from '@/components/Hike'
-import AddHike from '@/components/AddHike'
-import HikeDelete from '@/components/HikeDelete'
-import HikeEdit from '@/components/HikeEdit'
-import List from '@/components/List'
+import Hike from '@/views/Hike'
+import AddHike from '@/views/AddHike'
+import HikeDelete from '@/views/HikeDelete'
+import HikeEdit from '@/views/HikeEdit'
+import List from '@/views/List'
 
 Vue.use(Router)
 
